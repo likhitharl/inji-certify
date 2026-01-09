@@ -1,0 +1,14 @@
+IAR:
+   InjiCertify_WellKnownEndpoint_LandRegistry_all_Valid_Smoke:
+      endPoint: $INJICERTIFYBASEURL$/v1/certify/.well-known/openid-credential-issuer?version=latest
+      uniqueIdentifier: TC_InjiCertify_WellKnownEndpoint_LandRegistry_01
+      description: WellKnownEndpoint for Land registry with all valid details
+      role: resident
+      checkErrorsOnlyInResponse: true
+      restMethod: get
+      inputTemplate: injicertify/PresentationDuringIssuance/IAR/IAR
+      outputTemplate: injicertify/PresentationDuringIssuance/IAR/IARResult
+      input: '{
+}'
+      output: '{
+}'
