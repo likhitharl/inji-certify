@@ -1,0 +1,14 @@
+IARWithVP:
+   InjiCertify_authRequest_with_VP_all_Valid_Smoke:
+      endPoint: $INJICERTIFYBASEURL$/v1/certify/oauth/iar
+      uniqueIdentifier: TC_InjiCertify_IARInitialRequest_With_VP_01
+      description: get Auth code with verifiable presenatation reposne
+      role: resident
+      checkErrorsOnlyInResponse: true
+      restMethod: get
+      inputTemplate: injicertify/PresentationDuringIssuance/IARWithVP/IARVP
+      outputTemplate: injicertify/PresentationDuringIssuance/IARWithVP/IARVPResult
+      input: '{
+}'
+      output: '{
+}'

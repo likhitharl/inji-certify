@@ -1,14 +1,172 @@
-IAR:
-   InjiCertify_WellKnownEndpoint_LandRegistry_all_Valid_Smoke:
-      endPoint: $INJICERTIFYBASEURL$/v1/certify/.well-known/openid-credential-issuer?version=latest
-      uniqueIdentifier: TC_InjiCertify_WellKnownEndpoint_LandRegistry_01
-      description: WellKnownEndpoint for Land registry with all valid details
+IARInitialRequest:
+   InjiCertify_auth_initial_Request_all_Valid_Smoke:
+      endPoint: $INJICERTIFYBASEURL$/v1/certify/oauth/iar
+      uniqueIdentifier: TC_InjiCertify_IARInitialRequest_01
+      description: get intial Auth code response 
       role: resident
       checkErrorsOnlyInResponse: true
       restMethod: get
-      inputTemplate: injicertify/PresentationDuringIssuance/IAR/IAR
-      outputTemplate: injicertify/PresentationDuringIssuance/IAR/IARResult
+      inputTemplate: injicertify/PresentationDuringIssuance/IARInitialRequest/IAR
+      outputTemplate: injicertify/PresentationDuringIssuance/IARInitialRequest/IARResult
       input: '{
+		"response_type": "code",
+		"client_id": "$ID:ESignet_CreateOIDCClientV2_FormDoc_all_Valid_Smoke_sid_clientId$",
+		"code_challenge": "",
+		"code_challenge_method": "S256",
+		"redirect_uri": "",
+		"interaction_types_supported": "openid4vp_presentation",
+		"authorization_details": "[
+		  {
+		    "type": "openid_credential",
+		    "credential_configuration_id": "DrivingLicenseCredential"
+		  }
+		]"
 }'
       output: '{
+}'
+   InjiCertify_auth_initial_Request_Without_clientid:
+      endPoint: $INJICERTIFYBASEURL$/v1/certify/oauth/iar
+      uniqueIdentifier: TC_InjiCertify_IARInitialRequest_02
+      description: get intial Auth code response with invalid client id
+      role: resident
+      checkErrorsOnlyInResponse: true
+      restMethod: get
+      inputTemplate: injicertify/PresentationDuringIssuance/IARInitialRequest/IAR
+      outputTemplate: injicertify/PresentationDuringIssuance/IARInitialRequest/IARResult
+      input: '{
+		"response_type": "code",
+		"client_id": "$REMOVE$",
+		"code_challenge": "$ID:ESignet_OAuthDetailsRequest_FormDoc_uin_all_Valid_Smoke_sid_redirectUris$",
+		"code_challenge_method": "S256",
+		"redirect_uri": "$RANDOMID$",
+		"interaction_types_supported": "openid4vp_presentation",
+		"authorization_details": "[
+		  {
+		    "type": "openid_credential",
+		    "credential_configuration_id": "DrivingLicenseCredential"
+		  }
+		]"
+}'
+      output: '{
+}'
+   InjiCertify_auth_initial_Request_random_clientid:
+      endPoint: $INJICERTIFYBASEURL$/v1/certify/oauth/iar
+      uniqueIdentifier: TC_InjiCertify_IARInitialRequest_03
+      description: get intial Auth code response with random client id
+      checkErrorsOnlyInResponse: true
+      restMethod: get
+      inputTemplate: injicertify/PresentationDuringIssuance/IARInitialRequest/IAR
+      outputTemplate: injicertify/PresentationDuringIssuance/IARInitialRequest/IARResult
+      input: '{
+		"response_type": "code",
+		"client_id": "clientid",
+		"code_challenge": "$ID:ESignet_OAuthDetailsRequest_FormDoc_uin_all_Valid_Smoke_sid_redirectUris$",
+		"code_challenge_method": "S256,
+		"redirect_uri": "$RANDOMID$state",
+		"interaction_types_supported": "openid4vp_presentation",
+		"authorization_details": "[
+		  {
+		    "type": "openid_credential",
+		    "credential_configuration_id": "DrivingLicenseCredential"
+		  }
+		]"
+}'
+      output: '{
+}'
+
+   InjiCertify_auth_initial_Request_Without_CodeChallenge_neg:
+      endPoint: $INJICERTIFYBASEURL$/v1/certify/oauth/iar
+      uniqueIdentifier: TC_InjiCertify_IARInitialRequest_04
+      description: get intial Auth code response without code challenge
+      role: resident
+      checkErrorsOnlyInResponse: true
+      restMethod: get
+      inputTemplate: injicertify/PresentationDuringIssuance/IARInitialRequest/IAR
+      outputTemplate: injicertify/error
+      input: '{
+		"response_type": "code",
+		"client_id": "$ID:ESignet_CreateOIDCClientV2_FormDoc_all_Valid_Smoke_sid_clientId$",
+		"code_challenge": "$REMOVE$",
+		"code_challenge_method": "S256",
+		"redirect_uri": "$RANDOMID$state",
+		"interaction_types_supported": "openid4vp_presentation",
+		"authorization_details": "[
+		  {
+		    "type": "openid_credential",
+		    "credential_configuration_id": "DrivingLicenseCredential"
+		  }
+		]"
+}'
+      output: '{
+}'
+
+   InjiCertify_auth_initial_Request_invalid_CodeChallengeMethod_neg:
+      endPoint: $INJICERTIFYBASEURL$/v1/certify/oauth/iar
+      uniqueIdentifier: TC_InjiCertify_IARInitialRequest_05
+      description: get intial Auth code response with invalid code challenge method
+      role: resident
+      checkErrorsOnlyInResponse: true
+      restMethod: get
+      inputTemplate: injicertify/PresentationDuringIssuance/IARInitialRequest/IAR
+      outputTemplate: injicertify/error
+      input: '{
+		"response_type": "code",
+		"client_id": "$ID:ESignet_CreateOIDCClientV2_FormDoc_all_Valid_Smoke_sid_clientId$",
+		"code_challenge": "",
+		"code_challenge_method": "abcdef",
+		"redirect_uri": "$RANDOMID$state",
+		"interaction_types_supported": "openid4vp_presentation",
+		"authorization_details": "[
+		  {
+		    "type": "openid_credential",
+		    "credential_configuration_id": "DrivingLicenseCredential"
+		  }
+		]"
+}'
+      output: '{
+}'
+
+   InjiCertify_auth_initial_Request_without_CodeChallengeMethod_neg:
+      endPoint: $INJICERTIFYBASEURL$/v1/certify/oauth/iar
+      uniqueIdentifier: TC_InjiCertify_IARInitialRequest_06
+      description: get intial Auth code response without code challenge method
+      role: resident
+      checkErrorsOnlyInResponse: true
+      restMethod: get
+      inputTemplate: injicertify/PresentationDuringIssuance/IARInitialRequest/IAR
+      outputTemplate: injicertify/error
+      input: '{
+		"response_type": "code",
+		"client_id": "$ID:ESignet_CreateOIDCClientV2_FormDoc_all_Valid_Smoke_sid_clientId$",
+		"code_challenge": "",
+		"code_challenge_method": "$REMOVE$",
+		"redirect_uri": "$RANDOMID$state",
+		"interaction_types_supported": "openid4vp_presentation",
+		"authorization_details": "[
+		  {
+		    "type": "openid_credential",
+		    "credential_configuration_id": "DrivingLicenseCredential"
+		  }
+		]"
+}'
+      output: '{
+}'
+
+   InjiCertify_auth_initial_Request_without_AuthorizationDetails_neg:
+      endPoint: $INJICERTIFYBASEURL$/v1/certify/oauth/iar
+      uniqueIdentifier: TC_InjiCertify_IARInitialRequest_07
+      description: get intial Auth code response without authorization details
+      role: resident
+      checkErrorsOnlyInResponse: true
+      restMethod: get
+      inputTemplate: injicertify/PresentationDuringIssuance/IARInitialRequest/IAR
+      outputTemplate: injicertify/error
+      input: '{
+		"response_type": "code",
+		"client_id": "$ID:ESignet_CreateOIDCClientV2_FormDoc_all_Valid_Smoke_sid_clientId$",
+		"code_challenge": "",
+		"code_challenge_method": "S256",
+		"redirect_uri": "",
+		"interaction_types_supported": "openid4vp_presentation",
+		"authorization_details": "$REMOVE$"
 }'
