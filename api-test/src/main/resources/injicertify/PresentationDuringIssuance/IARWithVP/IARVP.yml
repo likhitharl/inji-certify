@@ -1,14 +1,30 @@
 IARWithVP:
-   InjiCertify_authRequest_with_VP_all_Valid_Smoke:
+   InjiCertify_IARRequest_with_VP_mdoc_all_Valid_Smoke_sid:
       endPoint: $INJICERTIFYBASEURL$/v1/certify/oauth/iar
       uniqueIdentifier: TC_InjiCertify_IARInitialRequest_With_VP_01
-      description: get Auth code with verifiable presenatation reposne
+      description: get Auth code with verifiable presentation reposne
       role: resident
       checkErrorsOnlyInResponse: true
       restMethod: get
       inputTemplate: injicertify/PresentationDuringIssuance/IARWithVP/IARVP
       outputTemplate: injicertify/PresentationDuringIssuance/IARWithVP/IARVPResult
       input: '{
+		"auth_session":	$ID:IAR_initial_Request_mdoc_all_Valid_Smoke_sid_auth_session$
+}'
+      output: '{
+}'
+
+   InjiCertify_IARRequest_with_VP_mdoc_without_authSession_neg:
+      endPoint: $INJICERTIFYBASEURL$/v1/certify/oauth/iar
+      uniqueIdentifier: TC_InjiCertify_IARInitialRequest_With_VP_01
+      description: get Auth code with verifiable presentation reposne
+      role: resident
+      checkErrorsOnlyInResponse: true
+      restMethod: get
+      inputTemplate: injicertify/PresentationDuringIssuance/IARWithVP/IARVP
+      outputTemplate: injicertify/PresentationDuringIssuance/IARWithVP/IARVPResult
+      input: '{
+		"auth_session":	$REMOVE$
 }'
       output: '{
 }'

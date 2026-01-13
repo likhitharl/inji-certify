@@ -1,5 +1,5 @@
 WellKnownEndpointPDI:
-   InjiCertify_WellKnownEndpoint_oauth_metadata_PDI_all_Valid_Smoke:
+   InjiCertify_WellKnownEndpoint_mdoc_oauth_metadata_PDI_all_Valid_Smoke_sid:
       endPoint: $INJICERTIFYBASEURL$/v1/certify/.well-known/oauth-authorization-server
       uniqueIdentifier: TC_InjiCertify_WellKnownEndpoint_PresentationDuringssuance_01
       description: Get OAuth Authorization Server Metadata for Presentation During Issuance

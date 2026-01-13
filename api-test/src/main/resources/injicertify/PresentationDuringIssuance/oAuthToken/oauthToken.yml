@@ -1,0 +1,19 @@
+OAuthTokenExchange:
+   InjiCertify_OAuthToken_mDoc_all_Valid_Smoke_sid:
+      endPoint: $INJICERTIFYBASEURL$/v1/certify/oauth/token
+      uniqueIdentifier: TC_InjiCertify_oAuthTokenExchange_PresentationDuringIssuance_01
+      description: Get oAuth token exchange for Presentation During Issuance
+      role: resident
+      checkErrorsOnlyInResponse: true
+      restMethod: get
+      inputTemplate: injicertify/PresentationDuringIssuance/oAuthToken/oauthToken
+      outputTemplate: injicertify/PresentationDuringIssuance/oAuthToken/oauthTokenResult
+      input: '{
+		"grant_type": "$ID:WellKnownEndpoint_mdoc_oauth_metadata_PDI_all_Valid_Smoke_sid_grant_types_supported$",
+		"code": "$ID:IARRequest_with_VP_mdoc_all_Valid_Smoke_sid_code$",
+		"code_verifier": "$CODEVERIFIER$",
+		"refresh_token": "$TIMESTAMP$"
+				
+}'
+      output: '{
+}'

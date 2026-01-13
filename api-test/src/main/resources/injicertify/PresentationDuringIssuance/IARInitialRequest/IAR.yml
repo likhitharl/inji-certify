@@ -1,5 +1,5 @@
 IARInitialRequest:
-   InjiCertify_auth_initial_Request_all_Valid_Smoke:
+   InjiCertify_IAR_initial_Request_mdoc_all_Valid_Smoke_sid:
       endPoint: $INJICERTIFYBASEURL$/v1/certify/oauth/iar
       uniqueIdentifier: TC_InjiCertify_IARInitialRequest_01
       description: get intial Auth code response 
@@ -9,22 +9,18 @@ IARInitialRequest:
       inputTemplate: injicertify/PresentationDuringIssuance/IARInitialRequest/IAR
       outputTemplate: injicertify/PresentationDuringIssuance/IARInitialRequest/IARResult
       input: '{
-		"response_type": "code",
+		"response_type": "$ID:WellKnownEndpoint_mdoc_oauth_metadata_PDI_all_Valid_Smoke_sid_response_types_supported$",
 		"client_id": "$ID:ESignet_CreateOIDCClientV2_FormDoc_all_Valid_Smoke_sid_clientId$",
-		"code_challenge": "",
-		"code_challenge_method": "S256",
-		"redirect_uri": "",
+		"code_challenge": "$CODECHALLENGE$",
+		"code_challenge_method": "$ID:WellKnownEndpoint_mdoc_oauth_metadata_PDI_all_Valid_Smoke_sid_code_challenge_methods_supported$",
+		"redirect_uri": "$IDPREDIRECTURI$",
 		"interaction_types_supported": "openid4vp_presentation",
-		"authorization_details": "[
-		  {
-		    "type": "openid_credential",
-		    "credential_configuration_id": "DrivingLicenseCredential"
-		  }
-		]"
+		"credential_configuration_id": "DrivingLicenseCredential"
 }'
       output: '{
 }'
-   InjiCertify_auth_initial_Request_Without_clientid:
+
+   InjiCertify_IAR_initial_Request_mdoc_Without_clientid:
       endPoint: $INJICERTIFYBASEURL$/v1/certify/oauth/iar
       uniqueIdentifier: TC_InjiCertify_IARInitialRequest_02
       description: get intial Auth code response with invalid client id
@@ -49,7 +45,7 @@ IARInitialRequest:
 }'
       output: '{
 }'
-   InjiCertify_auth_initial_Request_random_clientid:
+   InjiCertify_IAR_initial_Request_mdoc_random_clientid:
       endPoint: $INJICERTIFYBASEURL$/v1/certify/oauth/iar
       uniqueIdentifier: TC_InjiCertify_IARInitialRequest_03
       description: get intial Auth code response with random client id
@@ -74,7 +70,7 @@ IARInitialRequest:
       output: '{
 }'
 
-   InjiCertify_auth_initial_Request_Without_CodeChallenge_neg:
+   InjiCertify_IAR_initial_Request_mdoc_Without_CodeChallenge_neg:
       endPoint: $INJICERTIFYBASEURL$/v1/certify/oauth/iar
       uniqueIdentifier: TC_InjiCertify_IARInitialRequest_04
       description: get intial Auth code response without code challenge
@@ -100,7 +96,7 @@ IARInitialRequest:
       output: '{
 }'
 
-   InjiCertify_auth_initial_Request_invalid_CodeChallengeMethod_neg:
+   InjiCertify_IAR_initial_Request_mdoc_invalid_CodeChallengeMethod_neg:
       endPoint: $INJICERTIFYBASEURL$/v1/certify/oauth/iar
       uniqueIdentifier: TC_InjiCertify_IARInitialRequest_05
       description: get intial Auth code response with invalid code challenge method
@@ -126,7 +122,7 @@ IARInitialRequest:
       output: '{
 }'
 
-   InjiCertify_auth_initial_Request_without_CodeChallengeMethod_neg:
+   InjiCertify_IAR_initial_Request_mdoc_without_CodeChallengeMethod_neg:
       endPoint: $INJICERTIFYBASEURL$/v1/certify/oauth/iar
       uniqueIdentifier: TC_InjiCertify_IARInitialRequest_06
       description: get intial Auth code response without code challenge method
@@ -152,7 +148,7 @@ IARInitialRequest:
       output: '{
 }'
 
-   InjiCertify_auth_initial_Request_without_AuthorizationDetails_neg:
+   InjiCertify_IAR_initial_Request_mdoc_without_AuthorizationDetails_neg:
       endPoint: $INJICERTIFYBASEURL$/v1/certify/oauth/iar
       uniqueIdentifier: TC_InjiCertify_IARInitialRequest_07
       description: get intial Auth code response without authorization details
