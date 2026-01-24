@@ -53,7 +53,7 @@ IARInitialRequest:
 		"response_type": "code",
 		"client_id": "clientid",
 		"code_challenge": "$CODECHALLENGE$",
-		"code_challenge_method": "S256,
+		"code_challenge_method": "S256",
 		"redirect_uri": "$IDPREDIRECTURI$",
 		"interaction_types_supported": "openid4vp_presentation",
 		"credential_configuration_id": "DrivingLicenseCredential"
@@ -151,7 +151,7 @@ IARInitialRequest:
       description: get intial Auth code response without type in authorization details
       role: noauth
       restMethod: get
-      inputTemplate: injicertify/PresentationDuringIssuance/IARInitialRequest/IAR
+      inputTemplate: injicertify/PresentationDuringIssuance/IARInitialRequest/IARwithoutType
       outputTemplate: injicertify/error2
       input: '{
 		"response_type": "code",

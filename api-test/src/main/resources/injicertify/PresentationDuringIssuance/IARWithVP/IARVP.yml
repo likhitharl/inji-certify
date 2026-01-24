@@ -39,7 +39,7 @@ IARWithVP:
       outputTemplate: injicertify/error2
       input: '{
 		"auth_session":	"$ID:IAR_initial_Request_mdocvp_all_Valid_Smoke_sid_auth_session$",
-		"openid_vp_response": "$REMOVE$"
+		"openid4vp_response": "$REMOVE$"
 }'
       output: '{
 		"error": "invalid_request"

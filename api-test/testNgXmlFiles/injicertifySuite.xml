@@ -16,7 +16,7 @@
 		</classes>
 	</test>
 
-	<!--<test name="AddCredentialConfigForSunbird">
+	<test name="AddCredentialConfigForSunbird">
 		<parameter name="ymlFile"
 			value="injicertify/SunBirdC/AddVCTypeVCIssuancePlugin/AddCredentialConfiguration.yml" />
 		<parameter name="idKeyName" value="id" />
@@ -1336,7 +1336,7 @@
 		<classes>
 			<class name="io.mosip.testrig.apirig.injicertify.testscripts.DeleteWithParam" />
 		</classes>
-	</test>-->
+	</test>
 	<test name="WellKnownEndpointPDI">
 		<parameter name="ymlFile"
 			value="injicertify/PresentationDuringIssuance/DiscoveryEndpoints/IssuerMetadata/CredentialMetadata.yml" />
