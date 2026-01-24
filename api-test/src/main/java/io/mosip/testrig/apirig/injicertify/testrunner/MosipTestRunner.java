@@ -122,6 +122,8 @@ public class MosipTestRunner {
 				if (!testCasesToExecuteString.isBlank()) {
 					InjiCertifyUtil.testCasesInRunScope = DependencyResolver.getDependencies(testCasesToExecuteString);
 				}
+				
+				AdminTestUtil.fetchAndStoreCsrfToken();
 
 				startTestRunner();
 				
@@ -144,6 +146,8 @@ public class MosipTestRunner {
 				if (!testCasesToExecuteString.isBlank()) {
 					InjiCertifyUtil.testCasesInRunScope = DependencyResolver.getDependencies(testCasesToExecuteString);
 				}
+				
+				AdminTestUtil.fetchAndStoreCsrfToken();
 
 				startTestRunner();
 				

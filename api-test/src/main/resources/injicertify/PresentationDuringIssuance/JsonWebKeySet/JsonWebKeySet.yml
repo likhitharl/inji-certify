@@ -1,0 +1,70 @@
+JSONWebKeySet:
+   InjiCertify_JsonWebKeySet_LandRegistry_all_Valid_Smoke:
+      endPoint: $INJICERTIFYBASEURL$/v1/certify/oauth/.well-known/jwks.json
+      uniqueIdentifier: TC_InjiCertify_WellKnownEndpoint_LandRegistry_01
+      description: WellKnownEndpoint for Land registry with all valid details
+      role: resident
+      checkErrorsOnlyInResponse: true
+      restMethod: get
+      inputTemplate: injicertify/PresentationDuringIssuance/JsonWebkeySet/JsonWebKeySet
+      outputTemplate: injicertify/PresentationDuringIssuance/JsonWebkeySet/JsonWebKeySetResult
+      input: '{
+}'
+      output: '{
+}'
+
+   InjiCertify_WellKnownEndpoint_Mock_all_Valid_Smoke:
+      endPoint: $INJICERTIFYBASEURL$/v1/certify/.well-known/openid-credential-issuer?version=latest
+      uniqueIdentifier: TC_InjiCertify_WellKnownEndpoint_Mock_01
+      description: WellKnownEndpoint for Mock with all valid details
+      role: resident
+      checkErrorsOnlyInResponse: true
+      restMethod: get
+      inputTemplate: injicertify/WellKnownEndpoint/WellKnownEndpoint
+      outputTemplate: injicertify/WellKnownEndpoint/WellKnownEndpointResult
+      input: '{
+}'
+      output: '{
+}'
+
+   InjiCertify_WellKnownEndpoint_MosipID_all_Valid_Smoke:
+      endPoint: $INJICERTIFYBASEURL$/v1/certify/.well-known/openid-credential-issuer?version=latest
+      uniqueIdentifier: TC_InjiCertify_WellKnownEndpoint_MosipID_01
+      description: WellKnownEndpoint for MosipID with all valid details
+      role: resident
+      checkErrorsOnlyInResponse: true
+      restMethod: get
+      inputTemplate: injicertify/WellKnownEndpoint/WellKnownEndpoint
+      outputTemplate: injicertify/WellKnownEndpoint/WellKnownEndpointResult
+      input: '{
+}'
+      output: '{
+}'
+
+   InjiCertify_WellKnownEndpoint_Sunbird_all_Valid_Smoke:
+      endPoint: $INJICERTIFYBASEURL$/v1/certify/.well-known/openid-credential-issuer?version=latest
+      uniqueIdentifier: TC_InjiCertify_WellKnownEndpoint_Sunbird_01
+      description: WellKnownEndpoint for sunbird with all valid details
+      role: resident
+      checkErrorsOnlyInResponse: true
+      restMethod: get
+      inputTemplate: injicertify/WellKnownEndpoint/WellKnownEndpoint
+      outputTemplate: injicertify/WellKnownEndpoint/WellKnownEndpointResult
+      input: '{
+}'
+      output: '{
+}'
+
+   InjiCertify_WellKnownEndpoint_mDoc_all_Valid_Smoke:
+      endPoint: $INJICERTIFYBASEURL$/v1/certify/.well-known/openid-credential-issuer?version=latest
+      uniqueIdentifier: TC_InjiCertify_WellKnownEndpoint_mDoc_01
+      description: WellKnownEndpoint for mDoc with all valid details
+      role: resident
+      checkErrorsOnlyInResponse: true
+      restMethod: get
+      inputTemplate: injicertify/WellKnownEndpoint/WellKnownEndpoint
+      outputTemplate: injicertify/WellKnownEndpoint/WellKnownEndpointResult
+      input: '{
+}'
+      output: '{
+}'

@@ -207,3 +207,17 @@ WellKnownEndpoint:
 }'
       output: '{
 }'
+
+   InjiCertify_WellKnownEndpoint_mdocvp_all_Valid_Smoke:
+      endPoint: $INJICERTIFYBASEURL$/v1/certify/.well-known/openid-credential-issuer
+      uniqueIdentifier: TC_InjiCertify_WellKnownEndpoint_mdocvp_01
+      description: Get Credential Metadata from Well Known Endpoint
+      role: resident
+      checkErrorsOnlyInResponse: true
+      restMethod: get
+      inputTemplate: injicertify/PresentationDuringIssuance/DiscoveryEndpoints/IssuerMetadata/CredentialMetadata
+      outputTemplate: injicertify/PresentationDuringIssuance/DiscoveryEndpoints/IssuerMetadata/CredentialMetadataResult
+      input: '{
+}'
+      output: '{
+}'
