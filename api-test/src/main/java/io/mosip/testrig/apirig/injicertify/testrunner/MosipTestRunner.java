@@ -53,6 +53,7 @@ import io.mosip.testrig.apirig.utils.SkipTestCaseHandler;
 public class MosipTestRunner {
 	private static final Logger LOGGER = Logger.getLogger(MosipTestRunner.class);
 	private static String cachedPath = null;
+	private static String generateDependency;
 
 	public static String jarUrl = MosipTestRunner.class.getProtectionDomain().getCodeSource().getLocation().getPath();
 	public static List<String> languageList = new ArrayList<>();
@@ -104,6 +105,21 @@ public class MosipTestRunner {
 
 			String testCasesToExecuteString = InjiCertifyConfigManager.getproperty("testCasesToExecute");
 
+			generateDependency = InjiCertifyConfigManager.getproperty("generateDependencyJson");
+
+			if (!"yes".equalsIgnoreCase(generateDependency)) {
+
+				String testCasesToExecute = InjiCertifyConfigManager.getproperty("testCasesToExecute");
+				LOGGER.info("Testcases to execute as per config: " + testCasesToExecute);
+
+				if (testCasesToExecute != null && !testCasesToExecute.isBlank()) {
+					DependencyResolver
+							.loadDependencies(getGlobalResourcePath() + "/config/testCaseInterDependency.json");
+
+					InjiCertifyUtil.testCasesInRunScope = DependencyResolver.getDependencies(testCasesToExecute);
+				}
+			}
+
 			if (useCaseToExecute.equalsIgnoreCase("mosipid")) {
 
 				InjiCertifyUtil.dBCleanup();
@@ -114,50 +130,26 @@ public class MosipTestRunner {
 
 				BiometricDataProvider.generateBiometricTestData("Registration");
 
-				// Used for loading dependency from dependency json, When generating the
-				// dependency json file comment it out
-
-				DependencyResolver.loadDependencies(
-						getGlobalResourcePath() + "/config/testCaseInterDependency_" + useCaseToExecute + ".json");
-				if (!testCasesToExecuteString.isBlank()) {
-					InjiCertifyUtil.testCasesInRunScope = DependencyResolver.getDependencies(testCasesToExecuteString);
-				}
-				
-				AdminTestUtil.fetchAndStoreCsrfToken();
-
 				startTestRunner();
-				
-				// Used for generating the test case interdependency JSON file
-				// Comment it out after generating the file
-				// After generating copy the dependency json file from
-				// api-test\target\classes\MosipTestResource\MosipTemporaryTestResource\config
-				// Paste it in config
-//				AdminTestUtil.generateTestCaseInterDependencies(
-//						getGlobalResourcePath() + "/config/testCaseInterDependency_" + useCaseToExecute + ".json");
 
 				InjiCertifyUtil.dBCleanup();
 			} else {
 
-				// Used for loading dependency from dependency json, When generating the
-				// dependency json file comment it out
+				if (!"yes".equalsIgnoreCase(generateDependency)) {
 
-				DependencyResolver.loadDependencies(
-						getGlobalResourcePath() + "/config/testCaseInterDependency_" + useCaseToExecute + ".json");
-				if (!testCasesToExecuteString.isBlank()) {
-					InjiCertifyUtil.testCasesInRunScope = DependencyResolver.getDependencies(testCasesToExecuteString);
+					String testCasesToExecute = InjiCertifyConfigManager.getproperty("testCasesToExecute");
+					LOGGER.info("Testcases to execute as per config: " + testCasesToExecute);
+
+					if (testCasesToExecute != null && !testCasesToExecute.isBlank()) {
+						DependencyResolver
+								.loadDependencies(getGlobalResourcePath() + "/config/testCaseInterDependency.json");
+
+						InjiCertifyUtil.testCasesInRunScope = DependencyResolver.getDependencies(testCasesToExecute);
+					}
 				}
-				
-				AdminTestUtil.fetchAndStoreCsrfToken();
 
 				startTestRunner();
-				
-				// Used for generating the test case interdependency JSON file
-				// Comment it out after generating the file
-				// After generating copy the dependency json file from
-				// api-test\target\classes\MosipTestResource\MosipTemporaryTestResource\config
-				// Paste it in config
-//				AdminTestUtil.generateTestCaseInterDependencies(
-//						getGlobalResourcePath() + "/config/testCaseInterDependency_" + useCaseToExecute + ".json");
+
 			}
 		} catch (Exception e) {
 			LOGGER.error("Exception " + e.getMessage());
