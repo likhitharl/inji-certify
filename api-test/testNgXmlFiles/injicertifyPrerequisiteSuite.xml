@@ -182,7 +182,7 @@
 		<parameter name="prerequisite" value="Yes" />
 		<classes>
 			<class
-				name="io.mosip.testrig.apirig.injicertify.testscripts.SimplePostForAutoGenId" />
+				name="io.inji.testrig.apirig.injicertify.testscripts.SimplePostForAutoGenId" />
 		</classes>
 	</test>
 	<test name="CreateOIDCClientV2ForLandRegistry">
