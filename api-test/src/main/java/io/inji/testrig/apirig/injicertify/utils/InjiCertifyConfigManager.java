@@ -1,4 +1,4 @@
-package io.mosip.testrig.apirig.injicertify.utils;
+package io.inji.testrig.apirig.injicertify.utils;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -7,7 +7,7 @@ import java.util.Properties;
 import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
 
-import io.mosip.testrig.apirig.injicertify.testrunner.MosipTestRunner;
+import io.inji.testrig.apirig.injicertify.testrunner.MosipTestRunner;
 import io.mosip.testrig.apirig.utils.ConfigManager;
 
 public class InjiCertifyConfigManager extends ConfigManager{

@@ -1,4 +1,4 @@
-package io.mosip.testrig.apirig.injicertify.testrunner;
+package io.inji.testrig.apirig.injicertify.testrunner;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -21,10 +21,10 @@ import org.testng.TestNG;
 import com.nimbusds.jose.jwk.KeyUse;
 import com.nimbusds.jose.jwk.RSAKey;
 
+import io.inji.testrig.apirig.injicertify.utils.InjiCertifyConfigManager;
+import io.inji.testrig.apirig.injicertify.utils.InjiCertifyUtil;
 import io.mosip.testrig.apirig.dataprovider.BiometricDataProvider;
 import io.mosip.testrig.apirig.dbaccess.DBManager;
-import io.mosip.testrig.apirig.injicertify.utils.InjiCertifyConfigManager;
-import io.mosip.testrig.apirig.injicertify.utils.InjiCertifyUtil;
 import io.mosip.testrig.apirig.testrunner.BaseTestCase;
 import io.mosip.testrig.apirig.testrunner.ExtractResource;
 import io.mosip.testrig.apirig.testrunner.HealthChecker;
