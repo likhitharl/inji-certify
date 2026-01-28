@@ -5,7 +5,7 @@ IARWithVP:
       description: get Auth code with verifiable presentation reposne
       role: noauth
       checkErrorsOnlyInResponse: true
-      restMethod: get
+      restMethod: post
       inputTemplate: injicertify/PresentationDuringIssuance/IARWithVP/IARVP
       outputTemplate: injicertify/PresentationDuringIssuance/IARWithVP/IARVPResult
       input: '{
@@ -19,7 +19,7 @@ IARWithVP:
       uniqueIdentifier: TC_InjiCertify_IARInitialRequest_With_VP_02
       description: get Auth code without auth session in verifiable presentation reposne
       role: noauth
-      restMethod: get
+      restMethod: post
       inputTemplate: injicertify/PresentationDuringIssuance/IARWithVP/IARVP
       outputTemplate: injicertify/error2
       input: '{
@@ -34,7 +34,7 @@ IARWithVP:
       uniqueIdentifier: TC_InjiCertify_IARInitialRequest_With_VP_03
       description: get Auth code wth verifiable presentation reposne without openid vp response
       role: noauth
-      restMethod: get
+      restMethod: post
       inputTemplate: injicertify/PresentationDuringIssuance/IARWithVP/IARVP2
       outputTemplate: injicertify/error2
       input: '{

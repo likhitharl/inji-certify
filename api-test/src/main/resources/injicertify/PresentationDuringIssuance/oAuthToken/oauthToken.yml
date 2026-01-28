@@ -5,7 +5,7 @@ OAuthTokenExchange:
       description: Get oAuth token exchange for Presentation During Issuance
       role: noauth
       checkErrorsOnlyInResponse: true
-      restMethod: get
+      restMethod: post
       inputTemplate: injicertify/PresentationDuringIssuance/oAuthToken/oauthToken
       outputTemplate: injicertify/PresentationDuringIssuance/oAuthToken/oauthTokenResult
       input: '{
@@ -23,7 +23,7 @@ OAuthTokenExchange:
       description: Get oAuth token exchange without code for Presentation During Issuance
       role: noauth
       checkErrorsOnlyInResponse: true
-      restMethod: get
+      restMethod: post
       inputTemplate: injicertify/PresentationDuringIssuance/oAuthToken/oauthToken
       outputTemplate: injicertify/error2
       input: '{
@@ -42,7 +42,7 @@ OAuthTokenExchange:
       description: Get oAuth token exchange without code verifier for Presentation During Issuance
       role: noauth
       checkErrorsOnlyInResponse: true
-      restMethod: get
+      restMethod: post
       inputTemplate: injicertify/PresentationDuringIssuance/oAuthToken/oauthToken
       outputTemplate: injicertify/error2
       input: '{
@@ -61,7 +61,7 @@ OAuthTokenExchange:
       description: Get oAuth token exchange without grant type for Presentation During Issuance
       role: noauth
       checkErrorsOnlyInResponse: true
-      restMethod: get
+      restMethod: post
       inputTemplate: injicertify/PresentationDuringIssuance/oAuthToken/oauthToken
       outputTemplate: injicertify/error2
       input: '{
@@ -80,7 +80,7 @@ OAuthTokenExchange:
       description: Get oAuth token exchange without grant type for Presentation During Issuance
       role: noauth
       checkErrorsOnlyInResponse: true
-      restMethod: get
+      restMethod: post
       inputTemplate: injicertify/PresentationDuringIssuance/oAuthToken/oauthToken
       outputTemplate: injicertify/error2
       input: '{

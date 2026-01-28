@@ -5,7 +5,7 @@ IARInitialRequest:
       description: get intial Auth code response 
       role: noauth
       checkErrorsOnlyInResponse: true
-      restMethod: get
+      restMethod: post
       inputTemplate: injicertify/PresentationDuringIssuance/IARInitialRequest/IAR
       outputTemplate: injicertify/PresentationDuringIssuance/IARInitialRequest/IARResult
       input: '{
@@ -25,7 +25,7 @@ IARInitialRequest:
       uniqueIdentifier: TC_InjiCertify_IARInitialRequest_02
       description: get intial Auth code response with invalid client id
       role: noauth
-      restMethod: get
+      restMethod: post
       inputTemplate: injicertify/PresentationDuringIssuance/IARInitialRequest/IAR
       outputTemplate: injicertify/error2
       input: '{
@@ -46,7 +46,7 @@ IARInitialRequest:
       uniqueIdentifier: TC_InjiCertify_IARInitialRequest_03
       description: get intial Auth code response with random client id
       checkErrorsOnlyInResponse: true
-      restMethod: get
+      restMethod: post
       inputTemplate: injicertify/PresentationDuringIssuance/IARInitialRequest/IAR
       outputTemplate: injicertify/PresentationDuringIssuance/IARInitialRequest/IARResult
       input: '{
@@ -66,7 +66,7 @@ IARInitialRequest:
       uniqueIdentifier: TC_InjiCertify_IARInitialRequest_04
       description: get intial Auth code response without code challenge
       role: noauth
-      restMethod: get
+      restMethod: post
       inputTemplate: injicertify/PresentationDuringIssuance/IARInitialRequest/IAR
       outputTemplate: injicertify/error2
       input: '{
@@ -87,7 +87,7 @@ IARInitialRequest:
       uniqueIdentifier: TC_InjiCertify_IARInitialRequest_05
       description: get intial Auth code response with invalid code challenge method
       role: noauth
-      restMethod: get
+      restMethod: post
       inputTemplate: injicertify/PresentationDuringIssuance/IARInitialRequest/IAR
       outputTemplate: injicertify/error2
       input: '{
@@ -108,7 +108,7 @@ IARInitialRequest:
       uniqueIdentifier: TC_InjiCertify_IARInitialRequest_06
       description: get intial Auth code response without code challenge method
       role: noauth
-      restMethod: get
+      restMethod: post
       inputTemplate: injicertify/PresentationDuringIssuance/IARInitialRequest/IAR
       outputTemplate: injicertify/error2
       input: '{
@@ -129,7 +129,7 @@ IARInitialRequest:
       uniqueIdentifier: TC_InjiCertify_IARInitialRequest_07
       description: get intial Auth code response without authorization details
       role: noauth
-      restMethod: get
+      restMethod: post
       inputTemplate: injicertify/PresentationDuringIssuance/IARInitialRequest/IAR
       outputTemplate: injicertify/error2
       input: '{
@@ -150,7 +150,7 @@ IARInitialRequest:
       uniqueIdentifier: TC_InjiCertify_IARInitialRequest_08
       description: get intial Auth code response without type in authorization details
       role: noauth
-      restMethod: get
+      restMethod: post
       inputTemplate: injicertify/PresentationDuringIssuance/IARInitialRequest/IARwithoutType
       outputTemplate: injicertify/error2
       input: '{
@@ -171,7 +171,7 @@ IARInitialRequest:
       uniqueIdentifier: TC_InjiCertify_IARInitialRequest_09
       description: get intial Auth code response without type in authorization details
       role: noauth
-      restMethod: get
+      restMethod: post
       inputTemplate: injicertify/PresentationDuringIssuance/IARInitialRequest/IAR
       outputTemplate: injicertify/error2
       input: '{
@@ -191,7 +191,7 @@ IARInitialRequest:
       uniqueIdentifier: TC_InjiCertify_IARInitialRequest_10
       description: get intial Auth code response 
       role: noauth
-      restMethod: get
+      restMethod: post
       inputTemplate: injicertify/PresentationDuringIssuance/IARInitialRequest/IAR
       outputTemplate: injicertify/error2
       input: '{
