@@ -103,8 +103,6 @@ public class MosipTestRunner {
 
 			InjiCertifyUtil.configureOtp();
 
-			String testCasesToExecuteString = InjiCertifyConfigManager.getproperty("testCasesToExecute");
-
 			generateDependency = InjiCertifyConfigManager.getproperty("generateDependencyJson");
 
 			if (!"yes".equalsIgnoreCase(generateDependency)) {
@@ -135,19 +133,6 @@ public class MosipTestRunner {
 				InjiCertifyUtil.dBCleanup();
 			} else {
 
-				if (!"yes".equalsIgnoreCase(generateDependency)) {
-
-					String testCasesToExecute = InjiCertifyConfigManager.getproperty("testCasesToExecute");
-					LOGGER.info("Testcases to execute as per config: " + testCasesToExecute);
-
-					if (testCasesToExecute != null && !testCasesToExecute.isBlank()) {
-						DependencyResolver
-								.loadDependencies(getGlobalResourcePath() + "/config/testCaseInterDependency.json");
-
-						InjiCertifyUtil.testCasesInRunScope = DependencyResolver.getDependencies(testCasesToExecute);
-					}
-				}
-
 				startTestRunner();
 
 			}
@@ -165,6 +150,14 @@ public class MosipTestRunner {
 		OTPListener.bTerminate = true;
 
 		HealthChecker.bTerminate = true;
+		
+		// Used for generating the test case interdependency JSON file
+		if ("yes".equalsIgnoreCase(generateDependency)) {
+			LOGGER.info("Generating test case inter-dependencies");
+			AdminTestUtil.generateTestCaseInterDependencies(BaseTestCase.testCaseInterDependencyPath);
+		} else {
+			LOGGER.info("Skipping dependency generation");
+		}
 
 		System.exit(0);
 
@@ -381,5 +374,4 @@ public class MosipTestRunner {
 		else
 			return "IDE";
 	}
-
 }

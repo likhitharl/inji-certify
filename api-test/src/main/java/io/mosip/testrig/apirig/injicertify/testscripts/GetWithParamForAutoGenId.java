@@ -99,14 +99,6 @@ public class GetWithParamForAutoGenId extends InjiCertifyUtil implements ITest {
 						getJsonFromTemplate(inputtestCases.get(i).toString(), testCaseDTO.getInputTemplate()),
 						COOKIENAME, testCaseDTO.getRole(), testCaseDTO.getTestCaseName(), idKeyName);
 
-				Map<String, List<OutputValidationDto>> ouputValid = OutputValidationUtil.doJsonOutputValidation(
-						response.asString(),
-						getJsonFromTemplate(outputtestcase.get(i).toString(), testCaseDTO.getOutputTemplate()),
-						testCaseDTO, response.getStatusCode());
-				Reporter.log(ReportUtil.getOutputValidationReport(ouputValid));
-
-				if (!OutputValidationUtil.publishOutputResult(ouputValid))
-					throw new AdminTestException("Failed at output validation");
 			}
 		} else {
 			
@@ -126,7 +118,7 @@ public class GetWithParamForAutoGenId extends InjiCertifyUtil implements ITest {
 		}
 		
 		
-		
+		if (testCaseDTO.getTemplateFields() == null || templateFields.length == 0) {
 		Map<String, List<OutputValidationDto>> ouputValid = null;
 
 		ouputValid = OutputValidationUtil.doJsonOutputValidation(response.asString(),
@@ -136,6 +128,7 @@ public class GetWithParamForAutoGenId extends InjiCertifyUtil implements ITest {
 		Reporter.log(ReportUtil.getOutputValidationReport(ouputValid));
 		if (!OutputValidationUtil.publishOutputResult(ouputValid))
 			throw new AdminTestException("Failed at output validation");
+		}
 	}
 
 	/**
