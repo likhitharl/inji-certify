@@ -23,7 +23,7 @@ IARInitialRequest:
    InjiCertify_IAR_initial_Request_mdocvp_Without_clientid:
       endPoint: $INJICERTIFYBASEURL$/v1/certify/oauth/iar
       uniqueIdentifier: TC_InjiCertify_IARInitialRequest_02
-      description: get intial Auth code response with invalid client id
+      description: get intial Auth code response without client id
       role: noauth
       restMethod: post
       inputTemplate: injicertify/PresentationDuringIssuance/IARInitialRequest/IAR
@@ -189,7 +189,7 @@ IARInitialRequest:
    InjiCertify_IAR_initial_Request_mdocvp_invalid_CredentialConfigId_neg:
       endPoint: $INJICERTIFYBASEURL$/v1/certify/oauth/iar
       uniqueIdentifier: TC_InjiCertify_IARInitialRequest_10
-      description: get intial Auth code response 
+      description: get intial Auth code response with invalid credential configuration id
       role: noauth
       restMethod: post
       inputTemplate: injicertify/PresentationDuringIssuance/IARInitialRequest/IAR
