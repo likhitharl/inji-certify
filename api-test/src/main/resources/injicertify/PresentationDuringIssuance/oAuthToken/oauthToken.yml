@@ -77,7 +77,7 @@ OAuthTokenExchange:
    InjiCertify_OAuthToken_mdocvp_invalid_grantType_neg:
       endPoint: $INJICERTIFYBASEURL$/v1/certify/oauth/token
       uniqueIdentifier: TC_InjiCertify_oAuthTokenExchange_PresentationDuringIssuance_05
-      description: Get oAuth token exchange without grant type for Presentation During Issuance
+      description: Get oAuth token exchange invalid grant type for Presentation During Issuance
       role: noauth
       checkErrorsOnlyInResponse: true
       restMethod: post

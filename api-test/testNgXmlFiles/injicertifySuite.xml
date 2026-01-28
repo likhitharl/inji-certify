@@ -1371,7 +1371,7 @@
 				name="io.mosip.testrig.apirig.injicertify.testscripts.SimplePostForAutoGenIdForUrlEncoded" />
 		</classes>
 	</test>
-	<test name="OauthTokenPresentatonDuringIssuance">
+	<test name="OauthTokenPresentationDuringIssuance">
 		<parameter name="ymlFile"
 			value="injicertify/PresentationDuringIssuance/oAuthToken/oAuthToken.yml" />
 		<parameter name="idKeyName" value="access_token" />
@@ -1380,7 +1380,7 @@
 				name="io.mosip.testrig.apirig.injicertify.testscripts.SimplePostForAutoGenIdForUrlEncoded" />
 		</classes>
 	</test>
-	<test name="GetCredentialPresentatonDuringIssuance">
+	<test name="GetCredentialPresentationDuringIssuance">
 		<parameter name="ymlFile"
 			value="injicertify/PresentationDuringIssuance/GetCredential/GetCredential.yml" />
 		<classes>
