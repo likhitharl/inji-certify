@@ -61,7 +61,7 @@ The Test Rig is dynamically configured based on the core service plugin being te
 - **useCaseToExecute**: Specifies the use case to be executed, such as "sunbird".
 - **esignetActuatorPropertySection**: To fetch the configuration and properties from the actuator for service interactions.
 
-### 4. Configuration for Data provider Plugin(landregistry Use case):
+### 4. Configuration for Data provider Plugin (landregistry Use case):
 - **eSignetbaseurl**: The Test Rig will use the live eSignet instance integrated with the Mock-Identity-service.
 - **injiCertifyBaseURL**: The Test Rig will use the live inji-certify instance integrated with the Mock-Identity-service.
 - **mosip_components_base_urls**: A string defining the base URLs for various components.
@@ -77,7 +77,7 @@ The Test Rig is dynamically configured based on the core service plugin being te
 - **usePreConfiguredOtp**: A flag to use pre-configured OTPs. Set to `"true"` for OTP-based workflows.
 - **esignetActuatorPropertySection**: To fetch the configuration and properties from the actuator for service interactions.
 
-### 6. Configuration for VC Issuance Plugin(mdoc MDl Use case):
+### 6. Configuration for VC Issuance Plugin(mDoc MDL Use case):
 - **injiCertifyBaseURL**: The Test Rig will use the live inji-certify instance integrated with the Mock-Identity-service.
 - **mosip_components_base_urls**: A string defining the base URLs for various components.
 - **useCaseToExecute**: Specifies the use case to be executed, such as "mdocvp".
