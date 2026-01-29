@@ -2,7 +2,7 @@ IARInitialRequest:
    InjiCertify_IAR_initial_Request_mdocvp_all_Valid_Smoke_sid:
       endPoint: $INJICERTIFYBASEURL$/v1/certify/oauth/iar
       uniqueIdentifier: TC_InjiCertify_IARInitialRequest_01
-      description: get intial Auth code response 
+      description: get initial Auth code response 
       role: noauth
       checkErrorsOnlyInResponse: true
       restMethod: post
@@ -23,7 +23,7 @@ IARInitialRequest:
    InjiCertify_IAR_initial_Request_mdocvp_Without_clientid:
       endPoint: $INJICERTIFYBASEURL$/v1/certify/oauth/iar
       uniqueIdentifier: TC_InjiCertify_IARInitialRequest_02
-      description: get intial Auth code response without client id
+      description: get initial Auth code response without client id
       role: noauth
       restMethod: post
       inputTemplate: injicertify/PresentationDuringIssuance/IARInitialRequest/IAR
@@ -44,7 +44,8 @@ IARInitialRequest:
    InjiCertify_IAR_initial_Request_mdocvp_random_clientid:
       endPoint: $INJICERTIFYBASEURL$/v1/certify/oauth/iar
       uniqueIdentifier: TC_InjiCertify_IARInitialRequest_03
-      description: get intial Auth code response with random client id
+      description: get initial Auth code response with random client id
+      role: noauth	  
       checkErrorsOnlyInResponse: true
       restMethod: post
       inputTemplate: injicertify/PresentationDuringIssuance/IARInitialRequest/IAR
@@ -64,7 +65,7 @@ IARInitialRequest:
    InjiCertify_IAR_initial_Request_mdocvp_Without_CodeChallenge_neg:
       endPoint: $INJICERTIFYBASEURL$/v1/certify/oauth/iar
       uniqueIdentifier: TC_InjiCertify_IARInitialRequest_04
-      description: get intial Auth code response without code challenge
+      description: get initial Auth code response without code challenge
       role: noauth
       restMethod: post
       inputTemplate: injicertify/PresentationDuringIssuance/IARInitialRequest/IAR
@@ -85,7 +86,7 @@ IARInitialRequest:
    InjiCertify_IAR_initial_Request_mdocvp_invalid_CodeChallengeMethod_neg:
       endPoint: $INJICERTIFYBASEURL$/v1/certify/oauth/iar
       uniqueIdentifier: TC_InjiCertify_IARInitialRequest_05
-      description: get intial Auth code response with invalid code challenge method
+      description: get initial Auth code response with invalid code challenge method
       role: noauth
       restMethod: post
       inputTemplate: injicertify/PresentationDuringIssuance/IARInitialRequest/IAR
@@ -106,7 +107,7 @@ IARInitialRequest:
    InjiCertify_IAR_initial_Request_mdocvp_without_CodeChallengeMethod_neg:
       endPoint: $INJICERTIFYBASEURL$/v1/certify/oauth/iar
       uniqueIdentifier: TC_InjiCertify_IARInitialRequest_06
-      description: get intial Auth code response without code challenge method
+      description: get initial Auth code response without code challenge method
       role: noauth
       restMethod: post
       inputTemplate: injicertify/PresentationDuringIssuance/IARInitialRequest/IAR
@@ -127,7 +128,7 @@ IARInitialRequest:
    InjiCertify_IAR_initial_Request_mdocvp_without_AuthorizationDetails_neg:
       endPoint: $INJICERTIFYBASEURL$/v1/certify/oauth/iar
       uniqueIdentifier: TC_InjiCertify_IARInitialRequest_07
-      description: get intial Auth code response without authorization details
+      description: get initial Auth code response without authorization details
       role: noauth
       restMethod: post
       inputTemplate: injicertify/PresentationDuringIssuance/IARInitialRequest/IAR
@@ -148,7 +149,7 @@ IARInitialRequest:
    InjiCertify_IAR_initial_Request_mdocvp_without_Type_inAuthorizationDetails_neg:
       endPoint: $INJICERTIFYBASEURL$/v1/certify/oauth/iar
       uniqueIdentifier: TC_InjiCertify_IARInitialRequest_08
-      description: get intial Auth code response without type in authorization details
+      description: get initial Auth code response without type in authorization details
       role: noauth
       restMethod: post
       inputTemplate: injicertify/PresentationDuringIssuance/IARInitialRequest/IARwithoutType
@@ -169,7 +170,7 @@ IARInitialRequest:
    InjiCertify_IAR_initial_Request_mdocvp_without_ConfigId_inAuthorizationDetails_neg:
       endPoint: $INJICERTIFYBASEURL$/v1/certify/oauth/iar
       uniqueIdentifier: TC_InjiCertify_IARInitialRequest_09
-      description: get intial Auth code response without type in authorization details
+      description: get initial Auth code response without configid in authorization details
       role: noauth
       restMethod: post
       inputTemplate: injicertify/PresentationDuringIssuance/IARInitialRequest/IAR
@@ -189,7 +190,7 @@ IARInitialRequest:
    InjiCertify_IAR_initial_Request_mdocvp_invalid_CredentialConfigId_neg:
       endPoint: $INJICERTIFYBASEURL$/v1/certify/oauth/iar
       uniqueIdentifier: TC_InjiCertify_IARInitialRequest_10
-      description: get intial Auth code response with invalid credential configuration id
+      description: get initial Auth code response with invalid credential configuration id
       role: noauth
       restMethod: post
       inputTemplate: injicertify/PresentationDuringIssuance/IARInitialRequest/IAR
