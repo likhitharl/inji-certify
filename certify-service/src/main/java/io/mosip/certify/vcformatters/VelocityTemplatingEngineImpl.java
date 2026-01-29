@@ -10,6 +10,7 @@ import java.util.*;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import io.mosip.certify.config.VelocityEnvConfig;
 import io.mosip.certify.core.constants.*;
 import org.apache.commons.codec.binary.Base64;
 import org.apache.velocity.VelocityContext;
@@ -92,7 +93,7 @@ public class VelocityTemplatingEngineImpl implements VCFormatter {
                             log.error("CredentialConfig not found in DB for key: {}", templateKey);
                             return new CertifyException(ErrorConstants.EXPECTED_TEMPLATE_NOT_FOUND, "CredentialConfig not found for key: " + templateKey);
                         });
-            } else if (Objects.equals(credentialFormat, VCFormats.SD_JWT)) {
+            } else if (Objects.equals(credentialFormat, VCFormats.VC_SD_JWT)) {
                 String vct = parts[1];
                 return credentialConfigRepository.findByCredentialFormatAndSdJwtVct(credentialFormat, vct)
                         .orElseThrow(() -> {
@@ -264,7 +265,7 @@ public class VelocityTemplatingEngineImpl implements VCFormatter {
     @Override
     public JSONArray formatQRData(Map<String, Object> updatedTemplateParams) {
         String templateName = updatedTemplateParams.get(TEMPLATE_NAME).toString();
-        List<Map<String, Object>> qrSettings = getCachedCredentialConfig(templateName).getQrSettings();
+        List<Map<String, Object>> qrSettings = getQRSettings(templateName);
         if(qrSettings == null || qrSettings.isEmpty()) {
             return null;
         }
