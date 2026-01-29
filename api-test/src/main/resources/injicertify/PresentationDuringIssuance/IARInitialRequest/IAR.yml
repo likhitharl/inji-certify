@@ -45,7 +45,7 @@ IARInitialRequest:
       endPoint: $INJICERTIFYBASEURL$/v1/certify/oauth/iar
       uniqueIdentifier: TC_InjiCertify_IARInitialRequest_03
       description: get initial Auth code response with random client id
-      role: noauth	  
+      role: noauth 
       checkErrorsOnlyInResponse: true
       restMethod: post
       inputTemplate: injicertify/PresentationDuringIssuance/IARInitialRequest/IAR
