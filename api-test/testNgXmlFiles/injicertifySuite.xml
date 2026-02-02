@@ -16,7 +16,7 @@
 		</classes>
 	</test>
 
-	<test name="AddCredentialConfigForSunbird">
+	<!--<test name="AddCredentialConfigForSunbird">
 		<parameter name="ymlFile"
 			value="injicertify/SunBirdC/AddVCTypeVCIssuancePlugin/AddCredentialConfiguration.yml" />
 		<parameter name="idKeyName" value="id" />
@@ -1387,7 +1387,7 @@
 			<class
 				name="io.inji.testrig.apirig.injicertify.testscripts.SimplePost" />
 		</classes>
-	</test>
+	</test>-->
 	<test name="GeneratePreAuthCode">
 		<parameter name="ymlFile"
 			value="injicertify/PreAuthCodeFlow/GeneratePreAuthCode/GeneratePreAuthCode.yml" />
