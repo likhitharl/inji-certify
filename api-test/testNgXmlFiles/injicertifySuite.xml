@@ -1399,7 +1399,7 @@
 	<test name="GetCredentialOfferPreAuth">
 		<parameter name="ymlFile"
 			value="injicertify/PreAuthCodeFlow/GetCredentialOffer/GetCredentialOffer.yml" />
-			<parameter name="pathParams" value="pre-authorized_code" />
+			<parameter name="idKeyName" value="pre-authorized_code" />
 		<classes>
 			<class name="io.inji.testrig.apirig.injicertify.testscripts.GetWithParamForAutoGenId" />
 		</classes>

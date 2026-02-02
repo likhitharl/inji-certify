@@ -1,6 +1,6 @@
 TokenExchange:
   InjiCertify_TokenExchange_preauthcode_Valid_Smoke_sid:
-    endPoint: $INJICERTIFYBASEURL$/oauth/token
+    endPoint: $INJICERTIFYBASEURL$/v1/certify/oauth/token
     uniqueIdentifier: TC_preauth_TokenExchange_01
     description: Exchange pre-authorized code for access token
     role: noauth
@@ -17,7 +17,7 @@ TokenExchange:
     }'
 
   InjiCertify_TokenExchange_preauthcode_WithTxCode_Smoke_sid:
-    endPoint: $INJICERTIFYBASEURL$/oauth/token
+    endPoint: $INJICERTIFYBASEURL$/v1/certify/oauth/token
     uniqueIdentifier: TC_preauth_TokenExchange_02
     description: Exchange pre-authorized code with alphanumeric tx_code
     role: noauth
@@ -34,12 +34,11 @@ TokenExchange:
     }'
 
   InjiCertify_TokenExchange_preauthcode_UnsupportedGrantType_Neg:
-    endPoint: $INJICERTIFYBASEURL$/oauth/token
+    endPoint: $INJICERTIFYBASEURL$/v1/certify/oauth/token
     uniqueIdentifier: TC_preauth_TokenExchange_Neg_04
     description: Token exchange with unsupported grant type
     role: noauth
     restMethod: post
-    checkErrorsOnlyInResponse: true
     inputTemplate: injicertify/PreAuthCodeFlow/TokenExchange/TokenExchange
     outputTemplate: injicertify/error2
     input: '{
@@ -51,7 +50,7 @@ TokenExchange:
     }'
 
   InjiCertify_TokenExchange_preauthcode_InvalidCode_Neg:
-    endPoint: $INJICERTIFYBASEURL$/oauth/token
+    endPoint: $INJICERTIFYBASEURL$/v1/certify/oauth/token
     uniqueIdentifier: TC_preauth_TokenExchange_Neg_05
     description: Token exchange with invalid pre-authorized code
     role: noauth
@@ -67,7 +66,7 @@ TokenExchange:
     }'
 
   InjiCertify_TokenExchange_preauthcode_MissingTxCode_Neg:
-    endPoint: $INJICERTIFYBASEURL$/oauth/token
+    endPoint: $INJICERTIFYBASEURL$/v1/certify/oauth/token
     uniqueIdentifier: TC_preauth_TokenExchange_Neg_06
     description: Token exchange without tx_code when it is required
     role: noauth
@@ -83,7 +82,7 @@ TokenExchange:
     }'
 
   InjiCertify_TokenExchange_preauthcode_randomTxCode_Neg:
-    endPoint: $INJICERTIFYBASEURL$/oauth/token
+    endPoint: $INJICERTIFYBASEURL$/v1/certify/oauth/token
     uniqueIdentifier: TC_preauth_TokenExchange_Neg_07
     description: Token exchange with incorrect tx_code value
     role: noauth
@@ -100,7 +99,7 @@ TokenExchange:
     }'
 
   InjiCertify_TokenExchange_preauthcode_CodeExpired_Neg:
-    endPoint: $INJICERTIFYBASEURL$/oauth/token
+    endPoint: $INJICERTIFYBASEURL$/v1/certify/oauth/token
     uniqueIdentifier: TC_preauth_TokenExchange_Neg_09
     description: Token exchange with expired pre-authorized code
     role: noauth
@@ -116,12 +115,11 @@ TokenExchange:
     }'
 
   InjiCertify_TokenExchange_preauthcode_withoutGrantType_Neg:
-    endPoint: $INJICERTIFYBASEURL$/oauth/token
+    endPoint: $INJICERTIFYBASEURL$/v1/certify/oauth/token
     uniqueIdentifier: TC_preauth_TokenExchange_Neg_04
     description: Token exchange with unsupported grant type
     role: noauth
     restMethod: post
-    checkErrorsOnlyInResponse: true
     inputTemplate: injicertify/PreAuthCodeFlow/TokenExchange/TokenExchange
     outputTemplate: injicertify/error2
     input: '{
